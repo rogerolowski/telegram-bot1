@@ -1,0 +1,18 @@
+[project]
+name = "bot"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Roger Olowski",email = "rogerolowski@gmail.com"}
+]
+readme = "README.md"
+requires-python = "^3.8"
+dependencies = [
+    "aiogram (==3.0.0b7)",
+    "asyncpg (>=0.30.0,<0.31.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,22 @@
+- hosts: weednft
+  become: true
+  tasks:
+    - name: Update APT and install Docker + Docker Compose
+      apt:
+        name:
+          - docker.io
+          - docker-compose
+        update_cache: yes
+        state: present
+
+    - name: Enable and start Docker
+      systemd:
+        name: docker
+        enabled: true
+        state: started
+
+    - name: Add user to docker group (optional if you later deploy non-root)
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
